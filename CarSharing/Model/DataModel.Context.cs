@@ -32,6 +32,7 @@ namespace CarSharing.Model
         public virtual DbSet<CarMake> CarMakes { get; set; }
         public virtual DbSet<CarRental> CarRentals { get; set; }
         public virtual DbSet<City> Cities { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TypeEngine> TypeEngines { get; set; }
         public virtual DbSet<TypeOfCar> TypeOfCars { get; set; }

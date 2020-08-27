@@ -4,13 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3daafbfe1b124ad6968b73cc17143a19" Name="Diagram1" ZoomLevel="73">
+      <Diagram DiagramId="67703e31301c48049eed8232717f9fca" Name="Diagram1">
         <EntityTypeShape EntityType="CarSharingModel.Car" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="CarSharingModel.CarColor" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CarSharingModel.CarMake" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CarSharingModel.CarRental" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CarSharingModel.City" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CarSharingModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarSharingModel.Role" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarSharingModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CarSharingModel.TypeEngine" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CarSharingModel.TypeOfCar" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="CarSharingModel.User" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
@@ -21,6 +22,7 @@
         <AssociationConnector Association="CarSharingModel.FK_CarRental_Car" ManuallyRouted="false" />
         <AssociationConnector Association="CarSharingModel.FK_CarRental_City" ManuallyRouted="false" />
         <AssociationConnector Association="CarSharingModel.FK_CarRental_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="CarSharingModel.FK_Users_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

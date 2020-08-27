@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 d:\college\practice_for_summer\carshering\CarSharing\CarSharing\App.xaml
-2-1290218317
+5-61453461
 2948482949
-25-1869781184
+30-499464044
 18-449994390
-View\User\Auth.xaml;View\User\MainWindow.xaml;
+View\Admin\MainMenu.xaml;View\Client\MainMenu.xaml;View\User\Auth.xaml;View\User\MainWindow.xaml;View\User\SettingsAccount.xaml;
 
 False
 

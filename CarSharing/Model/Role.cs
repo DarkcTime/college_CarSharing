@@ -12,24 +12,18 @@ namespace CarSharing.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Role()
         {
-            this.CarRentals = new HashSet<CarRental>();
+            this.Users = new HashSet<User>();
         }
     
-        public int IdUsers { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public System.DateTime DateBirthdate { get; set; }
-        public Nullable<int> RoleId { get; set; }
+        public int IdRole { get; set; }
+        public string NameRole { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CarRental> CarRentals { get; set; }
-        public virtual Role Role { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

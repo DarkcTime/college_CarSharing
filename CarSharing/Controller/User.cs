@@ -12,6 +12,11 @@ namespace CarSharing.Controller
 
         public static CarSharing.Model.User AuthorizedUser{ get; private set; }
 
+
+        private const int ADMIN = 1;
+
+        private const int CLIENT = 2;
+
         public bool AuthUser(string login, string password)
         {
             var user = carShaeringEntities.Users.Where(i => login == i.Email && password == i.Password);
@@ -30,13 +35,31 @@ namespace CarSharing.Controller
 
         public bool CheckFields(string login, string password)
         {
-            if (String.IsNullOrWhiteSpace(login) || password == "")
+            if (String.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
                 SharedClass.MessageBoxWarning("Все поля должны быть заполнены");
                 return false; 
             }
 
             return true; 
+        }
+
+        public bool CheckFields(string firstName, string lastName, string login, string password)
+        {
+            if (String.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
+            {
+                SharedClass.MessageBoxWarning("Все поля должны быть заполнены");
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+        public bool isAdmin()
+        {
+            return AuthorizedUser.RoleId == ADMIN; 
         }
 
 

@@ -55,6 +55,14 @@
     <Property Name="PriceInMinute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="CarRentals" Relationship="Self.FK_CarRental_City" FromRole="City" ToRole="CarRental" />
   </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="IdRole" />
+    </Key>
+    <Property Name="IdRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="CarSharingModel.FK_Users_Role" FromRole="Role" ToRole="User" />
+  </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -94,7 +102,9 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="DateBirthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="RoleId" Type="Int32" />
     <NavigationProperty Name="CarRentals" Relationship="Self.FK_CarRental_Users" FromRole="Users" ToRole="CarRental" />
+    <NavigationProperty Name="Role" Relationship="CarSharingModel.FK_Users_Role" FromRole="User" ToRole="Role" />
   </EntityType>
   <Association Name="FK_Car_CarColor">
     <End Role="CarColor" Type="Self.CarColor" Multiplicity="1" />
@@ -186,6 +196,7 @@
     <EntitySet Name="CarMakes" EntityType="Self.CarMake" />
     <EntitySet Name="CarRentals" EntityType="Self.CarRental" />
     <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TypeEngines" EntityType="Self.TypeEngine" />
     <EntitySet Name="TypeOfCars" EntityType="Self.TypeOfCar" />
@@ -248,6 +259,10 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK_Users_Role" Association="CarSharingModel.FK_Users_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -260,4 +275,16 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <Association Name="FK_Users_Role">
+    <End Type="CarSharingModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="CarSharingModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="IdRole" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

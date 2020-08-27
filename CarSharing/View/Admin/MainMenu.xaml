@@ -1,0 +1,30 @@
+﻿<Page x:Class="CarSharing.View.Admin.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarSharing.View.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="MainMenu">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock Name="TxtTime" FontSize="46" FontWeight="Bold" Margin="0,0,0,10"></TextBlock>
+                <TextBlock Name="TxtDate" Grid.Row="1" FontSize="23"></TextBlock>
+            </StackPanel>
+        </Grid>
+        <Button Grid.Row="1">
+            
+        </Button>
+    </Grid>
+</Page>

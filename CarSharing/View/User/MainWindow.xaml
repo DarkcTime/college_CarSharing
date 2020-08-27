@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarSharing"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Main menu" Height="450" Width="800">
     <Grid>
-        <Button Background="Black" Foreground="Orange">hey</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid Background="Orange">
+                <Image Source="/CarSharing;component/Resource/icon.jpg"></Image>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="3" Click="SettingsAccount">Settings account</Button>
+                <Button Grid.Row="4" Click="Exit" Background="Black" Foreground="Orange" Content="Exit"></Button>
+            </Grid>
+        </Grid>
+        <Frame Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden"></Frame>
+      
     </Grid>
 </Window>
