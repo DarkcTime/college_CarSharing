@@ -36,6 +36,12 @@ namespace CarSharing.Controller
             service.Navigate(page);
         }
 
+        public static void OpenNewWindow(Window TargetPage, Window ClosePage)
+        {
+            TargetPage.Show();
+            ClosePage.Close(); 
+        }
+
 
 
 

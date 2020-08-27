@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarSharing.View.User"
         mc:Ignorable="d"
-        Title="Auth" Height="450" Width="800">
+        Title="Authorization" Height="450" Width="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button  OpacityMask="Black" Content="Sing in"  Click="ClickBtnSing"></Button>
+            <Button OpacityMask="Black" Grid.Column="1" Click="ClickBtnExit" Content="Close"></Button>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/CarSharing;component/Resource/icon.jpg"></Image>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontWeight="Bold" Grid.Column="1">Super-speed </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock>Login</TextBlock>
+            <TextBox Grid.Column="1" Name="TxbLogin"></TextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock>Password</TextBlock>
+            <PasswordBox Grid.Column="1" x:Name="PsbPassword"></PasswordBox>
+        </Grid>
     </Grid>
 </Window>
