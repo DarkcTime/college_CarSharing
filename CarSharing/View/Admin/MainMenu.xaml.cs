@@ -26,5 +26,11 @@ namespace CarSharing.View.Admin
             InitializeComponent();
             Timer timer = new Timer(this.TxtTime, this.TxtDate);
         }
+
+
+        private void ListOfCars(object sender, RoutedEventArgs routedEventArgs)
+        {
+
+        }
     }
 }

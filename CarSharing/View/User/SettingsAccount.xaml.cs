@@ -39,7 +39,8 @@ namespace CarSharing.View.User
                 
                 SharedClass.MessageBoxInformation("Данные о пользователе успешно отредактированы");
 
-                SharedClass.OpenNewPage(this, new View.Admin.MainMenu());
+                if (new Controller.User().isAdmin()) SharedClass.OpenNewPage(this, new View.Admin.MainMenu());
+                else SharedClass.OpenNewPage(this, new View.Client.MainMenu());
             }
             catch (Exception ex)
             {
