@@ -28,3 +28,9 @@ d:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\A
 d:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Client\MainMenu.baml
 d:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\User\SettingsAccount.g.cs
 d:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\User\SettingsAccount.baml
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Admin\ListOfCars.g.cs
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Admin\ListOfCars.baml
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Admin\AddNewCar.g.cs
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Admin\AddNewCar.baml
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml

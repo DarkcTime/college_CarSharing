@@ -30,7 +30,7 @@ namespace CarSharing.View.Admin
 
         private void ListOfCars(object sender, RoutedEventArgs routedEventArgs)
         {
-
+            SharedClass.OpenNewPage(this, new View.Admin.ListOfCars()); 
         }
     }
 }

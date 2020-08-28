@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-d:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\
 CarSharing
 none
 false
 DEBUG;TRACE
-d:\college\practice_for_summer\carshering\CarSharing\CarSharing\App.xaml
-5-61453461
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\App.xaml
+71302575077
 2948482949
-311943796716
-18-449994390
-View\Admin\MainMenu.xaml;View\Client\MainMenu.xaml;View\User\Auth.xaml;View\User\MainWindow.xaml;View\User\SettingsAccount.xaml;
+33355064039
+20722842232
+View\Admin\AddNewCar.xaml;View\Admin\ListOfCars.xaml;View\Admin\MainMenu.xaml;View\Client\MainMenu.xaml;View\User\Auth.xaml;View\User\MainWindow.xaml;View\User\SettingsAccount.xaml;
 
 True
 

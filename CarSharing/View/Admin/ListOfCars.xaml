@@ -1,0 +1,54 @@
+﻿<Page x:Class="CarSharing.View.Admin.ListOfCars"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarSharing.View.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="ListOfCars">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontWeight="Bold">List of cars</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="Selected Car" BorderBrush="Black" Margin="5">
+                <StackPanel Orientation="Vertical">
+                    <TextBox Margin="0 10 0 10"  Text="{Binding Path=VIN}"></TextBox>
+                    <ComboBox SelectedItem="{Binding Path=TypeOfCar1}" Name="CmbTypeOfCar" DisplayMemberPath="NameType" Margin="0 10 0 10"></ComboBox>
+                    <ComboBox SelectedItem="{Binding Path=CarMake1}" Name="CmbCarMake" DisplayMemberPath="NameMake" Margin="0 10 0 10"></ComboBox>
+                    <ComboBox SelectedItem="{Binding Path=CarColor1}" Name="CmbCarColor" DisplayMemberPath="NameColor" Margin="0 10 0 10" ></ComboBox>
+                    <ComboBox SelectedItem="{Binding Path=TypeEngine1}" Name="CmbTypeEngine" DisplayMemberPath="NameEngine" Margin="0 10 0 10"></ComboBox>
+                </StackPanel>
+            </GroupBox>
+            <DataGrid Grid.Column="1" AutoGenerateColumns="False" Margin="5" Name="ListCars" SelectionChanged="SelectCar">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="Make" 
+                                        Binding="{Binding Path=CarMake1.NameMake}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Type"
+                                        Binding="{Binding Path=TypeEngine1.NameEngine}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Price in minute"
+                                        Binding="{Binding Path=TypeOfCar1.PriceInMinute}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Click="SaveEditAboutCar">Save</Button>
+            <Button Grid.Column="1" Click="DeleteSelectedCar">Delete</Button>
+            <Button Grid.Column="2" Click="AddNewCar">Add</Button>
+        </Grid>
+    </Grid>
+</Page>

@@ -41,6 +41,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.7\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -64,9 +67,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\Admin\AddNewCar.xaml.cs">
+      <DependentUpon>AddNewCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\ListOfCars.xaml.cs">
+      <DependentUpon>ListOfCars.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\User\SettingsAccount.xaml.cs">
       <DependentUpon>SettingsAccount.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Admin\AddNewCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\ListOfCars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Admin\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
