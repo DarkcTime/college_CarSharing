@@ -14,7 +14,27 @@ namespace CarSharing.Controller
         public static void SaveChanges()
         {
             carShaeringEntities.SaveChanges();
+            //carShaeringEntities.CarRentals.First().
         }
+
+
+        public List<CarSharing.Model.Car> getListCars()
+        {
+            //carShaeringEntities.Cars.First().
+
+            return carShaeringEntities.Cars.ToList();
+
+        }
+
+        public List<CarSharing.Model.City> getListCities()
+        {
+            //carShaeringEntities.Cars.First().
+
+            return carShaeringEntities.Cities.ToList();
+
+        }
+
+
 
     }
 }

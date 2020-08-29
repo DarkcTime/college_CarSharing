@@ -13,8 +13,18 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <DataGrid Margin="10" AutoGenerateColumns="False" Name="ListRentCarsForUser">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Make" Binding="{Binding Path=CarRental.Car.CarMake1.NameMake}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="City" Binding="{Binding Path=CarRental.City.NameCity}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Type" Binding="{Binding Path=CarRental.Car.TypeOfCar1.NameType}" ></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="PriceInMinute" Binding="{Binding Path=PriceInMinuteDollar}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="DateStart" Binding="{Binding Path=CarRentral.DateTimeStart}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="DateEnd" Binding="{Binding Path=CarRentral.DateTimeEnd}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>    
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>

@@ -26,7 +26,6 @@ namespace CarSharing.View.Admin
     /// </summary>
     public partial class AddNewCar : Window
     {
-        private readonly ILogger logger; 
 
         private Controller.Admin Admin = new Controller.Admin();
 

@@ -10,14 +10,6 @@ namespace CarSharing.Controller
     class Admin : Model
     {
 
-        public List<CarSharing.Model.Car> getListCars()
-        {
-           //carShaeringEntities.Cars.First().
-
-            return carShaeringEntities.Cars.ToList();
-
-        }
-
         public void RemoveCar(CarSharing.Model.Car car)
         {
             carShaeringEntities.Cars.Remove(car);

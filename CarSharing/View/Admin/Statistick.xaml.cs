@@ -13,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CarSharing.View.Client
+namespace CarSharing.View.Admin
 {
     /// <summary>
-    /// Interaction logic for MainMenu.xaml
+    /// Interaction logic for Statistick.xaml
     /// </summary>
-    public partial class MainMenu : Page
+    public partial class Statistick : Page
     {
-        private CarSharing.Controller.Client Client = new Controller.Client();
-
-        public MainMenu()
+        public Statistick()
         {
             InitializeComponent();
-            this.ListRentCarsForUser.ItemsSource = Client.getListRentForUser(CarSharing.Controller.User.AuthorizedUser);
-            
-
         }
-
-
-
     }
 }

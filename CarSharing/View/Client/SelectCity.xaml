@@ -1,0 +1,22 @@
+﻿<Window x:Class="CarSharing.View.Client.SelectCity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarSharing.View.Client"
+        mc:Ignorable="d"
+        Title="Select city" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontWeight="Bold">Select City</TextBlock>
+        <DataGrid Margin="10" Grid.Row="1" AutoGenerateColumns="False" SelectionChanged="SelectCityInDataGrid" Name="ListCities">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Name" Binding="{Binding Path=NameCity}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Price in minute" Binding="{Binding Path=PriceInMinute}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

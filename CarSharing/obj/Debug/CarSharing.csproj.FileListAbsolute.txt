@@ -34,3 +34,11 @@ D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\A
 D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Admin\AddNewCar.baml
 D:\college\practice_for_summer\carshering\CarSharing\CarSharing\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 D:\college\practice_for_summer\carshering\CarSharing\CarSharing\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Admin\Statistick.g.cs
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Client\AddNewRent.g.cs
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Client\SelectCar.g.cs
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Client\SelectCity.g.cs
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Admin\Statistick.baml
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Client\AddNewRent.baml
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Client\SelectCar.baml
+D:\college\practice_for_summer\carshering\CarSharing\CarSharing\obj\Debug\View\Client\SelectCity.baml

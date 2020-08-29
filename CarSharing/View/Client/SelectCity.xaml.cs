@@ -10,26 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CarSharing.View.Client
 {
     /// <summary>
-    /// Interaction logic for MainMenu.xaml
+    /// Interaction logic for SelectCity.xaml
     /// </summary>
-    public partial class MainMenu : Page
+    public partial class SelectCity : Window
     {
-        private CarSharing.Controller.Client Client = new Controller.Client();
-
-        public MainMenu()
+        public SelectCity()
         {
             InitializeComponent();
-            this.ListRentCarsForUser.ItemsSource = Client.getListRentForUser(CarSharing.Controller.User.AuthorizedUser);
-            
-
+            this.ListCities.ItemsSource = new Controller.Client().getListCities();
         }
 
+
+        private void SelectCityInDataGrid(object sender, RoutedEventArgs routedEventArgs)
+        {
+            Client.AddNewRent.SelectedCity = (CarSharing.Model.City)this.ListCities.SelectedItem;
+            this.DialogResult = true;
+        }
 
 
     }

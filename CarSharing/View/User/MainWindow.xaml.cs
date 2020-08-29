@@ -54,7 +54,7 @@ namespace CarSharing
         #region Admin
         private void ListOfCars(object sender, RoutedEventArgs eventArgs)
         {
-
+            this.MainFrame.Content = new View.Admin.ListOfCars(); 
         }
         private void Statistick(object sender, RoutedEventArgs eventArgs)
         {
@@ -69,7 +69,7 @@ namespace CarSharing
         #region Client
         private void AddNewRent(object sender, RoutedEventArgs eventArgs)
         {
-
+            this.MainFrame.Content = new View.Client.AddNewRent();
         }
         private void EndRent(object sender, RoutedEventArgs eventArgs)
         {

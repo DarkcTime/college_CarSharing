@@ -67,11 +67,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\RentCarForUser.cs" />
     <Compile Include="View\Admin\AddNewCar.xaml.cs">
       <DependentUpon>AddNewCar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\ListOfCars.xaml.cs">
       <DependentUpon>ListOfCars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Statistick.xaml.cs">
+      <DependentUpon>Statistick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Client\AddNewRent.xaml.cs">
+      <DependentUpon>AddNewRent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Client\SelectCar.xaml.cs">
+      <DependentUpon>SelectCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Client\SelectCity.xaml.cs">
+      <DependentUpon>SelectCity.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\User\SettingsAccount.xaml.cs">
       <DependentUpon>SettingsAccount.xaml</DependentUpon>
@@ -88,7 +101,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Admin\Statistick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Client\AddNewRent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Client\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Client\SelectCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Client\SelectCity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

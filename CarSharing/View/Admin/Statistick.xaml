@@ -1,0 +1,46 @@
+﻿<Page x:Class="CarSharing.View.Admin.Statistick"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarSharing.View.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="Statistick">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontWeight="Bold">Statistick Super-Speed</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="TxtNumberRent"></TextBlock>
+                    <TextBlock Grid.Row="1" Name="TxtSumMonth"></TextBlock>
+                </Grid>
+            </Grid>
+            <DataGrid Grid.Column="1" Margin="10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="City"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Make"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="DateStart"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="DateEnd"></DataGridTextColumn>
+                </DataGrid.Columns> 
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>
