@@ -29,7 +29,7 @@
     <Key>
       <PropertyRef Name="IdCarRental" />
     </Key>
-    <Property Name="IdCarRental" Type="int" Nullable="false" />
+    <Property Name="IdCarRental" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CarId" Type="int" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="CityId" Type="int" Nullable="false" />

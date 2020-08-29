@@ -24,5 +24,10 @@ namespace CarSharing.Model
         public virtual Car Car { get; set; }
         public virtual City City { get; set; }
         public virtual User User { get; set; }
+
+        public static implicit operator string(CarRental v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

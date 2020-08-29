@@ -19,8 +19,8 @@
                 <DataGridTextColumn Width="*" Header="City" Binding="{Binding Path=CarRental.City.NameCity}"></DataGridTextColumn>
                 <DataGridTextColumn Width="*" Header="Type" Binding="{Binding Path=CarRental.Car.TypeOfCar1.NameType}" ></DataGridTextColumn>
                 <DataGridTextColumn Width="*" Header="PriceInMinute" Binding="{Binding Path=PriceInMinuteDollar}"></DataGridTextColumn>
-                <DataGridTextColumn Width="*" Header="DateStart" Binding="{Binding Path=CarRentral.DateTimeStart}"></DataGridTextColumn>
-                <DataGridTextColumn Width="*" Header="DateEnd" Binding="{Binding Path=CarRentral.DateTimeEnd}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="DateStart" Binding="{Binding Path=CarRental.DateTimeStart}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="DateEnd" Binding="{Binding Path=CarRental.DateTimeEnd}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="1">
@@ -28,8 +28,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource ButtonWidth}">Add new rent</Button>
-            <Button Grid.Column="1" Style="{StaticResource ButtonWidth}">End rent</Button>
+            <Button Style="{StaticResource ButtonWidth}" Click="AddNewRent">Add new rent</Button>
+            <Button Grid.Column="1" Style="{StaticResource ButtonWidth}" Click="EndRent">End rent</Button>
         </Grid>
     </Grid>
 </Page>

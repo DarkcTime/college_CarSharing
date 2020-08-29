@@ -12,6 +12,7 @@ namespace CarSharing.Model
 
         public int PriceInMinuteDollar { get; set; }
 
+     
 
     }
 }
