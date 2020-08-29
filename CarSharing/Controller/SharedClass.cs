@@ -11,21 +11,21 @@ namespace CarSharing.Controller
 {
     class SharedClass
     {
-        public static void MessageBoxError(string message, string title = "Ошибка")
+        public static void MessageBoxError(string message, string title = "Error")
         {
             MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        public static void MessageBoxError(Exception ex, string title = "Ошибка")
+        public static void MessageBoxError(Exception ex, string title = "Error")
         {
             MessageBox.Show(ex.Message, title, MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        public static void MessageBoxWarning(string message, string title = "Проверьте введенные данные")
+        public static void MessageBoxWarning(string message, string title = "Check fields")
         {
             MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Warning);
         }
-        public static void MessageBoxInformation(string message, string title = "Успешно")
+        public static void MessageBoxInformation(string message, string title = "Success")
         {
             MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Information);
         }

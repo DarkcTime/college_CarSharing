@@ -28,16 +28,32 @@ namespace CarSharing.View.Client
 
         public AddNewRent()
         {
-            InitializeComponent();
-            LoadPage();
+            try
+            {
+                InitializeComponent();
+                SetStartTextBlocks();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+            
         }
 
-        private void LoadPage()
+        private void SetStartTextBlocks()
         {
-            setTextAuto("");
-            setTextCity("");
-            setTextPrice("");
-        }
+            try
+            {
+                setTextAuto("");
+                setTextCity("");
+                setTextPrice("");
+
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+                    }
 
         private void setTextAuto(string text)
         {
@@ -54,12 +70,21 @@ namespace CarSharing.View.Client
             this.TxtPriceInMinute.Text = $"Price in minute: {text}";
         }
 
+        //change Price in window
         private void UpdatePrice()
         {
-            int price = 0;
-            if (SelectedCar != null) price += SelectedCar.TypeOfCar1.PriceInMinute;
-            if (SelectedCity != null) price += SelectedCity.PriceInMinute;
-            setTextPrice(price.ToString());
+            try
+            {
+                int price = 0;
+                if (SelectedCar != null) price += SelectedCar.TypeOfCar1.PriceInMinute;
+                if (SelectedCity != null) price += SelectedCity.PriceInMinute;
+                setTextPrice(price.ToString());
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+            
         }
 
         private void SelectCar(object sender, RoutedEventArgs routedEventArgs)

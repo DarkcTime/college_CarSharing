@@ -33,29 +33,44 @@ namespace CarSharing.View.Admin
 
         public AddNewCar()
         {
-            InitializeComponent();
-            this.DataContext = NewCar;
-            this.LoadDataAddCar();
-        }
-
-        private void LoadDataAddCar()
-        {
-            this.CmbCarColor.ItemsSource = Admin.getListColors();
-            this.CmbTypeOfCar.ItemsSource = Admin.getListTypeOfCar();
-            this.CmbCarMake.ItemsSource = Admin.getListCarMakes();
-            this.CmbTypeEngine.ItemsSource = Admin.getListTypeEngines();
-        }
-
-
-        private void AddCar(object sender, RoutedEventArgs routedEventArgs)
-        {
-
+            try
+            {
+                InitializeComponent();
+                this.DataContext = NewCar;
+                this.LoadDataInComboBox();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
             
+        }
+
+        private void LoadDataInComboBox()
+        {
+            try
+            {
+                this.CmbCarColor.ItemsSource = Admin.getListColors();
+                this.CmbTypeOfCar.ItemsSource = Admin.getListTypeOfCar();
+                this.CmbCarMake.ItemsSource = Admin.getListCarMakes();
+                this.CmbTypeEngine.ItemsSource = Admin.getListTypeEngines();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+            
+        }
+
+        //add new car in BD
+        private void AddCar(object sender, RoutedEventArgs routedEventArgs)
+        {   
             try
             { 
-  
+                //check fiels, if have null -> send message for user
                 if (Admin.checkVIN(NewCar)) SharedClass.MessageBoxWarning("Все поля должны быть заполнены");
                 else {
+                    //add new user and send message for user
                     Admin.AddCar(NewCar);
                     SharedClass.MessageBoxInformation("Автомобиль успешно добавлен в базу данных");
                     this.Close();
@@ -77,6 +92,7 @@ namespace CarSharing.View.Admin
             
         }
 
+        //close this window
         private void Cancel(object sender, RoutedEventArgs routedEventArgs)
         {
             this.Close();

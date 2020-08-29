@@ -13,7 +13,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Margin="10" AutoGenerateColumns="False" Name="ListRentCarsForUser">
+        <DataGrid Margin="10" IsReadOnly="True" AutoGenerateColumns="False" Name="ListRentCarsForUser">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="Make" Binding="{Binding Path=CarRental.Car.CarMake1.NameMake}"></DataGridTextColumn>
                 <DataGridTextColumn Width="*" Header="City" Binding="{Binding Path=CarRental.City.NameCity}"></DataGridTextColumn>

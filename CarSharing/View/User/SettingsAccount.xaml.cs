@@ -23,15 +23,25 @@ namespace CarSharing.View.User
     {
         public SettingsAccount()
         {
-            InitializeComponent();
-            DataContext = Controller.User.AuthorizedUser;
-            TblRole.Text = $"Your Role: {Controller.User.AuthorizedUser.Role.NameRole}"; 
+            try
+            {
+                InitializeComponent();
+                //load data for auth User
+                DataContext = Controller.User.AuthorizedUser;
+                TblRole.Text = $"Your Role: {Controller.User.AuthorizedUser.Role.NameRole}";
+
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
         }
 
         private void SaveChanges(object sender, RoutedEventArgs e)
         {
             try
             {
+                //check fiels, if null -> send message for user
                 if(!new Controller.User().CheckFields(Controller.User.AuthorizedUser.Email, Controller.User.AuthorizedUser.Password, 
                     Controller.User.AuthorizedUser.FirstName, Controller.User.AuthorizedUser.LastName)) return;
                 
@@ -39,6 +49,7 @@ namespace CarSharing.View.User
                 
                 SharedClass.MessageBoxInformation("Данные о пользователе успешно отредактированы");
 
+                //open main menu, for type auth user
                 if (new Controller.User().isAdmin()) SharedClass.OpenNewPage(this, new View.Admin.MainMenu());
                 else SharedClass.OpenNewPage(this, new View.Client.MainMenu());
             }

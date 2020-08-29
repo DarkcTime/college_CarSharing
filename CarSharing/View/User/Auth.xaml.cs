@@ -20,21 +20,31 @@ namespace CarSharing.View.User
     /// </summary>
     public partial class Auth : Window
     {
+
+        Controller.User user = new Controller.User();
+
         public Auth()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
         }
 
+        //sing in application
         private void ClickBtnSing(object sender, RoutedEventArgs e)
         {
             try
             {
-                Controller.User user = new Controller.User();
-
                 string login = this.TxbLogin.Text;
 
                 string password = this.PsbPassword.Password; 
 
+                //if check is null, send message for user
                 if (!user.CheckFields(login, password)) return;
                 
                 //authorization user
@@ -50,6 +60,7 @@ namespace CarSharing.View.User
 
         }
 
+        //close application
         private void ClickBtnExit(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

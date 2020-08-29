@@ -28,33 +28,65 @@ namespace CarSharing.View.Admin
 
         public ListOfCars()
         {
-            InitializeComponent();
-            LoadDataAboutCars(); 
+            try
+            {
+                InitializeComponent();
+                LoadDataAboutCars();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+             
         }
 
-
+        //load data in DataGrid and ComboBoxs
         private void LoadDataAboutCars()
         {
-            this.ListCars.ItemsSource = Admin.getListCars();
-            this.CmbCarColor.ItemsSource = Admin.getListColors();
-            this.CmbTypeOfCar.ItemsSource = Admin.getListTypeOfCar();
-            this.CmbCarMake.ItemsSource = Admin.getListCarMakes();
-            this.CmbTypeEngine.ItemsSource = Admin.getListTypeEngines();
+            try
+            {
+                this.ListCars.ItemsSource = Admin.getListCars();
+                this.CmbCarColor.ItemsSource = Admin.getListColors();
+                this.CmbTypeOfCar.ItemsSource = Admin.getListTypeOfCar();
+                this.CmbCarMake.ItemsSource = Admin.getListCarMakes();
+                this.CmbTypeEngine.ItemsSource = Admin.getListTypeEngines();
+
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
         }
 
-
+        //update data in DataGrid
         private void UpdateDataGrid()
         {
-            this.ListCars.ItemsSource = null; 
-            this.ListCars.ItemsSource = Admin.getListCars();
+            try
+            {
+                this.ListCars.ItemsSource = null;
+                this.ListCars.ItemsSource = Admin.getListCars();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+
         }
 
+        //set DataContext from Selected Row
         private void SelectCar(object sender, RoutedEventArgs routedEventArgs)
         {
-            if (this.ListCars.SelectedItem != null)
+            try
             {
-                this.SelectedCar = (Model.Car)this.ListCars.SelectedItem;
-                this.DataContext = this.SelectedCar; 
+                if (this.ListCars.SelectedItem != null)
+                {
+                    this.SelectedCar = (Model.Car)this.ListCars.SelectedItem;
+                    this.DataContext = this.SelectedCar;
+                }
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
             }
                  
         }
@@ -68,10 +100,11 @@ namespace CarSharing.View.Admin
                     SharedClass.MessageBoxWarning("Выберите автомобиль в таблице");
                     return;
                 }
-                if (!Admin.checkVIN(SelectedCar)) SharedClass.MessageBoxWarning("Все поля должны быть заполнены");
+                if (Admin.checkVIN(SelectedCar)) SharedClass.MessageBoxWarning("Все поля должны быть заполнены");
                 else
                 {
                     Controller.Model.SaveChanges();
+                    SharedClass.MessageBoxInformation("Data Success Edit for selected car");
                     UpdateDataGrid();
                 }
                 
@@ -106,6 +139,7 @@ namespace CarSharing.View.Admin
             }
         }
 
+        //open window for add Car and Update data in DataGrid
         private void AddNewCar(object sender, RoutedEventArgs routedEventArgs)
         {
             try

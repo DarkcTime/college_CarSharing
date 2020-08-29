@@ -39,8 +39,8 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock Name="TxtDateStart" Text="{Binding Path=CarRental.DateTimeStart, StringFormat='Date start: \n{0}'}" ></TextBlock>
-                        <TextBlock Grid.Row="1" Name="TxtDateEnd" Text="{Binding Path=CarRental.DateTimeEnd, StringFormat='Date end: \n{0}'}"></TextBlock>
+                        <TextBlock Name="TxtDateStart" Text="{Binding Path=CarRental.DateTimeStart, StringFormat='Date start: {0}'}" ></TextBlock>
+                        <TextBlock Grid.Row="1" Name="TxtDateEnd" Text="{Binding Path=CarRental.DateTimeEnd, StringFormat='Date end: {0}'}"></TextBlock>
                         <TextBlock Grid.Row="2" Name="TxtSum" ></TextBlock>
                     </Grid>
                 </GroupBox>

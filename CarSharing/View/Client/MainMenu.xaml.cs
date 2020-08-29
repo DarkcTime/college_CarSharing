@@ -28,20 +28,42 @@ namespace CarSharing.View.Client
 
         public MainMenu()
         {
-            InitializeComponent();
-            LoadPage();
+            try
+            {
+                InitializeComponent();
+                LoadDataGrid();
+            }
+            catch(Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+            
         }
 
-        private void LoadPage()
+        private void LoadDataGrid()
         {
-            this.ListRentCarsForUser.ItemsSource = Client.getListRentForUser(CarSharing.Controller.User.AuthorizedUser);
+            try
+            {
+                this.ListRentCarsForUser.ItemsSource = Client.getListRentForUser(CarSharing.Controller.User.AuthorizedUser);
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
         }
 
         private void UpdatePage()
         {
-            this.ListRentCarsForUser.ItemsSource = null;
-            rentCarForUser = new Model.RentCarForUser();
-            LoadPage();
+            try
+            {
+                this.ListRentCarsForUser.ItemsSource = null;
+                rentCarForUser = new Model.RentCarForUser();
+                LoadDataGrid();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
         }
 
         private void AddNewRent(object sender, RoutedEventArgs routedEventArgs)
@@ -58,17 +80,25 @@ namespace CarSharing.View.Client
 
         private void EndRent(object sender, RoutedEventArgs routedEventArgs)
         {
-            if(this.ListRentCarsForUser.SelectedItem != null)
+            try
             {
-                Client.EditRent((CarSharing.Model.RentCarForUser)this.ListRentCarsForUser.SelectedItem);
-                SharedClass.MessageBoxInformation("Success");
-                UpdatePage();
+                if (this.ListRentCarsForUser.SelectedItem != null)
+                {
+                    Client.EditRent((CarSharing.Model.RentCarForUser)this.ListRentCarsForUser.SelectedItem);
+                    SharedClass.MessageBoxInformation("Success");
+                    UpdatePage();
 
+                }
+                else
+                {
+                    SharedClass.MessageBoxWarning("Выберите запись в таблице");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                SharedClass.MessageBoxWarning("Выберите запись в таблице");
+                SharedClass.MessageBoxError(ex);
             }
+            
         }
 
 

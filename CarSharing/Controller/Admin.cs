@@ -72,7 +72,6 @@ namespace CarSharing.Controller
             return String.IsNullOrWhiteSpace(car.VIN); 
         }
 
-        
         public bool isSelected(CarSharing.Model.Car car)
         {
             return car != null; 

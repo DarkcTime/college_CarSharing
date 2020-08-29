@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarSharing.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,15 +22,31 @@ namespace CarSharing.View.Client
     {
         public SelectCity()
         {
-            InitializeComponent();
-            this.ListCities.ItemsSource = new Controller.Client().getListCities();
+            try
+            {
+                InitializeComponent();
+                this.ListCities.ItemsSource = new Controller.Client().getListCities();
+            }
+            catch (Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+            
         }
 
 
         private void SelectCityInDataGrid(object sender, RoutedEventArgs routedEventArgs)
         {
-            Client.AddNewRent.SelectedCity = (CarSharing.Model.City)this.ListCities.SelectedItem;
-            this.DialogResult = true;
+            try
+            {
+                Client.AddNewRent.SelectedCity = (CarSharing.Model.City)this.ListCities.SelectedItem;
+                this.DialogResult = true;
+            }
+            catch(Exception ex)
+            {
+                SharedClass.MessageBoxError(ex);
+            }
+
         }
 
 

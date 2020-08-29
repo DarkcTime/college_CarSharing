@@ -29,7 +29,7 @@
                     <ComboBox SelectedItem="{Binding Path=TypeEngine1}" Name="CmbTypeEngine" DisplayMemberPath="NameEngine" Margin="0 10 0 10"></ComboBox>
                 </StackPanel>
             </GroupBox>
-            <DataGrid Grid.Column="1" AutoGenerateColumns="False" Margin="5" Name="ListCars" SelectionChanged="SelectCar">
+            <DataGrid Grid.Column="1" IsReadOnly="True" AutoGenerateColumns="False" Margin="5" Name="ListCars" SelectionChanged="SelectCar">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="*" Header="Make" 
                                         Binding="{Binding Path=CarMake1.NameMake}"></DataGridTextColumn>
