@@ -58,7 +58,7 @@ namespace CarSharing
         }
         private void Statistick(object sender, RoutedEventArgs eventArgs)
         {
-
+            this.MainFrame.Content = new View.Admin.Statistick();
         }
         private void CurrentCars(object sender, RoutedEventArgs eventArgs)
         {

@@ -32,13 +32,26 @@
                     <TextBlock Name="TxtNumberRent"></TextBlock>
                     <TextBlock Grid.Row="1" Name="TxtSumMonth"></TextBlock>
                 </Grid>
+                <GroupBox Grid.Row="1" BorderBrush="Black" Margin="5"  Header="Selected Row">
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Name="TxtDateStart" Text="{Binding Path=CarRental.DateTimeStart, StringFormat='Date start: \n{0}'}" ></TextBlock>
+                        <TextBlock Grid.Row="1" Name="TxtDateEnd" Text="{Binding Path=CarRental.DateTimeEnd, StringFormat='Date end: \n{0}'}"></TextBlock>
+                        <TextBlock Grid.Row="2" Name="TxtSum" ></TextBlock>
+                    </Grid>
+                </GroupBox>
+                
             </Grid>
-            <DataGrid Grid.Column="1" Margin="10">
+            <DataGrid Grid.Column="1" IsReadOnly="True" Margin="10" AutoGenerateColumns="False" Name="ListRentForStatistick" SelectionChanged="SelectRentForStatistick"> 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" Header="City"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Make"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="DateStart"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="DateEnd"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="City" Binding="{Binding Path=CarRental.City.NameCity}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Make" Binding="{Binding Path=CarRental.Car.CarMake1.NameMake}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Client" Binding="{Binding Path=CarRental.User.FirstName}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Time" Binding="{Binding Path=Time}"></DataGridTextColumn>
                 </DataGrid.Columns> 
             </DataGrid>
         </Grid>

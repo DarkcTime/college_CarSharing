@@ -26,6 +26,30 @@ namespace CarSharing.Controller
             Model.SaveChanges();
         }
 
+        public List<CarSharing.Model.RentForStatistick> getListRentForStatistick()
+        {
+            List<CarSharing.Model.RentForStatistick> rentForStatisticks = carShaeringEntities.CarRentals.Where(i => i.DateTimeEnd != null).Select(i => new CarSharing.Model.RentForStatistick()
+            {
+                CarRental = i
+            }).ToList();
+
+            rentForStatisticks.ForEach(i => i.Time = Convert.ToDateTime(i.CarRental.DateTimeEnd).Subtract(i.CarRental.DateTimeStart));
+            rentForStatisticks.ForEach(i => i.Price = getPrice((TimeSpan)i.Time, i.CarRental.Car.TypeOfCar1.PriceInMinute, i.CarRental.City.PriceInMinute));
+            rentForStatisticks.ForEach(i => getTime((TimeSpan)i.Time));
+            return rentForStatisticks; 
+
+        }
+
+        private int getPrice(TimeSpan timeSpan, int priceCar, int priceCity)
+        {
+            return (priceCar + priceCity) * (int)timeSpan.TotalMinutes; 
+        }
+
+        private string getTime(TimeSpan timeSpan)
+        {
+            return Convert.ToDateTime(timeSpan.ToString()).ToShortTimeString();
+        }
+
         public List<CarSharing.Model.CarMake> getListCarMakes()
         {
             return carShaeringEntities.CarMakes.ToList();
